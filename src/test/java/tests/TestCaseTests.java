@@ -26,7 +26,7 @@ public class TestCaseTests extends BaseTests {
 
 
     @Test
-    public void createTestCaseTests() {
+    public void createAndDeleteSectionTests() {
         loginPage.waitForPageLoaded();
         loginPage.login(EMAIL, PASSWORD);
         dashboardPage.waitForPageLoaded();
