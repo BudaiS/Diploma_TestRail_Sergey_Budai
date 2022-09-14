@@ -10,12 +10,19 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import pages.DashboardPage;
 import pages.LoginPage;
+import utils.DriverFactory;
+import utils.PropertyReader;
 
 import java.util.concurrent.TimeUnit;
 
+import static constans.Constant.TimeoutVariable.*;
+
 public class BaseTests {
-    protected String EMAIL = "budai.s@mail.ru";
-    protected String PASSWORD = "CJ.q2q9Rx/IrUfqe/CbQ";
+    protected String EMAIL = PropertyReader.getProperty("test_rail.email");
+    protected String PASSWORD = PropertyReader.getProperty("test_rail.password");
+    protected String NEW_PROJECT = PropertyReader.getProperty("test_rail.new_project_name");
+    protected String DELETE_SECTION_NAME = PropertyReader.getProperty("test_rail.delete_section_name");
+    protected String TEST_PROJECT_NAME = PropertyReader.getProperty("test_rail.test_project_name");
     protected WebDriver driver;
     protected WebDriverWait wait;
     LoginPage loginPage;
@@ -26,9 +33,9 @@ public class BaseTests {
         String browserName = System.getProperty("browser", "chrome");
         driver = DriverFactory.getDriver(browserName);
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
-        wait = new WebDriverWait(driver, 20);
+        driver.manage().timeouts().implicitlyWait(IMPLICIT_WAIT, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(PAE_LOAD_TIMEOUT, TimeUnit.SECONDS);
+        wait = new WebDriverWait(driver, EXPLICIT_WAIT);
         testContext.setAttribute("driver", driver);
         loginPage = new LoginPage(driver);
         dashboardPage = new DashboardPage(driver);

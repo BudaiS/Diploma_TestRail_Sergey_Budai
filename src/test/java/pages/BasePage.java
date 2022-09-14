@@ -9,30 +9,32 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
+import static constans.Constant.TimeoutVariable.*;
+
 public abstract class BasePage {
-    private final static String CONFIRM_DELETE_INPUT = "//strong[text()='%s']";
-    private final static By CONFIRM_DELETE_OK_BUTTON = By.xpath("//div[@id='deleteDialog']//following-sibling::a[contains(@class,'button-ok')]");
-    private final static By CONFIRM_DELETE = By.xpath("//strong[contains(text(),'Yes, delete this')]");
-    protected By IMAGE = By.xpath("//img[contains(@id,'pendo-image-badge')]");
+    protected final static By IMAGE = By.xpath("//img[contains(@id,'pendo-image-badge')]");
     protected WebDriver driver;
     protected WebDriverWait wait;
 
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, 30);
+        this.wait = new WebDriverWait(driver, EXPLICIT_WAIT);
     }
 
-    public abstract void waitForPageLoaded();
+    public void waitForPageLoaded() {
+        waitForElementClickable(IMAGE);
+    }
+
 
     public String getCurrentUrl() {
         return driver.getCurrentUrl();
     }
 
     public boolean isElementPresent(By locator) {
-        driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(ZERO_IMPLICIT_WAIT, TimeUnit.SECONDS);
         boolean isPresent = !driver.findElements(locator).isEmpty();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(IMPLICIT_WAIT, TimeUnit.SECONDS);
         return isPresent;
     }
 
@@ -51,18 +53,6 @@ public abstract class BasePage {
 
     public void scrollIntoView(WebElement element) {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
-    }
-
-    public void clickConfirmDeleteOkButton() {
-        waitForElementClickable(CONFIRM_DELETE_OK_BUTTON);
-        driver.findElement(CONFIRM_DELETE_OK_BUTTON).click();
-    }
-
-    public void clickConfirmDeleteInput(String confirmationText) {
-        waitForElementClickable(CONFIRM_DELETE);
-        driver.findElement(By.xpath
-                (String.format(CONFIRM_DELETE_INPUT, confirmationText))).click();
-
     }
 
 

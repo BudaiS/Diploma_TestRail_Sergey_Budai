@@ -13,6 +13,7 @@
         <testNgVersion>7.6.0</testNgVersion>
         <webdrivermanagerVersion>5.2.0</webdrivermanagerVersion>
         <javaFakerVersion>1.0.2</javaFakerVersion>
+        <lombokVersion>1.18.8</lombokVersion>
         <maven.compiler.source>18</maven.compiler.source>
         <maven.compiler.target>18</maven.compiler.target>
     </properties>
@@ -38,6 +39,12 @@
             <artifactId>testng</artifactId>
             <version>${testNgVersion}</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombokVersion}</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 

@@ -3,9 +3,9 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class DashboardPage extends BasePage {
+public class DashboardPage extends HomePage {
     private final static By ADD_PROJECT = By.id("sidebar-projects-add");
-    private final static By TEST_PROJECT = By.xpath("//div[contains(@class,'summary-title')]//following-sibling::a[text()='TestProject']");
+    private final static String TEST_PROJECT = "//div[contains(@class,'summary-title')]//following-sibling::a[text()='%s']";
 
     public DashboardPage(WebDriver driver) {
         super(driver);
@@ -25,8 +25,8 @@ public class DashboardPage extends BasePage {
         driver.findElement(ADD_PROJECT).click();
     }
 
-    public void clickTestProject() {
-        driver.findElement(TEST_PROJECT).click();
+    public void clickTestProject(String projectName) {
+        driver.findElement(By.xpath(String.format(TEST_PROJECT, projectName))).click();
     }
 
 }

@@ -2,9 +2,9 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import utils.PropertyReader;
 
 public class LoginPage extends BasePage {
-    private final static String URL = "https://budai.testrail.io";
     private final static By LOGIN_BUTTON = By.cssSelector(".single-sign-on");
     private final static By EMAIL_INPUT = By.cssSelector("input#name");
     private final static By PASSWORD_INPUT = By.cssSelector("input#password");
@@ -14,14 +14,13 @@ public class LoginPage extends BasePage {
         super(driver);
     }
 
-    @Override
-    public void waitForPageLoaded() {
+    public void waitForLoginPageLoaded() {
         waitForElementClickable(LOGIN_BUTTON);
 
     }
 
     public void open() {
-        driver.get(URL);
+        driver.get(PropertyReader.getProperty("test_rail.login_url"));
     }
 
     public void setPassword(String password) {

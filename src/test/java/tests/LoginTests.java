@@ -4,14 +4,13 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import static constans.Constant.LoginTestsConstants.*;
+
 public class LoginTests extends BaseTests {
-    private final static String ERROR_MESSAGE_TEXT = "Email/Login or Password is incorrect. Please try again.";
-    private final static String INCORRECT_EMAIL = "abcd";
-    private final static String INCORRECT_PASSWORD = "abcde";
 
     @Test
     public void loginTests() {
-        loginPage.waitForPageLoaded();
+        loginPage.waitForLoginPageLoaded();
         loginPage.login(EMAIL, PASSWORD);
         dashboardPage.waitForPageLoaded();
         Assert.assertTrue(dashboardPage.isAddProjectButtonDisplayed());
@@ -20,7 +19,7 @@ public class LoginTests extends BaseTests {
 
     @Test(dataProvider = "negativeLoginTests")
     public void negativeLoginTests(String email, String password, String errorMessage) {
-        loginPage.waitForPageLoaded();
+        loginPage.waitForLoginPageLoaded();
         loginPage.setEmail(email);
         loginPage.setPassword(password);
         loginPage.clickLoginButton();
