@@ -72,11 +72,11 @@ public class TestCaseTests extends BaseTests {
         overviewPage.waitForPageLoaded();
         overviewPage.openHeaderByName(TEST_CASES_HEADER);
         testCasesPage.waitForPageLoaded();
-        testCasesPage.clickAddTestCasesButton();
+        testCasesPage.clickOverallAddInEntityPageButton(TEST_CASE_BUTTON_NAME);
         addTestCasePage.waitForPageLoaded();
         TestCase testTestCase = TestCaseFactory.getFullInfoTestCase();
         addTestCasePage.fillForm(testTestCase);
-        addTestCasePage.clickAddTestCaseButton();
+        addTestCasePage.clickOverallAddInAddPageButton();
         testCaseDetailsPage.waitForPageLoaded();
         testCaseDetailsPage.getTestCaseInfo();
         Assert.assertEquals(testCaseDetailsPage.getTestCaseInfo(), testTestCase,
@@ -87,7 +87,7 @@ public class TestCaseTests extends BaseTests {
                 "Verify the text of the message");
         testCaseDetailsPage.clickEditButton();
         addTestCasePage.waitForPageLoaded();
-        addTestCasePage.clickDeleteTestCaseButton();
+        addTestCasePage.clickOverallDeleteButton();
         addTestCasePage.clickDeletedPermanentlyButton();
         addTestCasePage.clickConfirmDeletePermanentlyButton();
         testCaseDetailsPage.waitForPageLoaded();

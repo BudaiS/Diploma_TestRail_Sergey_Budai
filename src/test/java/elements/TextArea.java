@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import java.util.Objects;
 
 public class TextArea extends BaseElements {
-    private final static String TEXTAREA_LOCATOR = "//label[@for='%s']/following-sibling::div[contains(@class,'textarea-resizable')]/div";
+    private final static String TEXTAREA_LOCATOR = "//label[@for='%s']/following-sibling::div[contains(@class,'textarea-resizable')]/div[1]";
 
     public TextArea(WebDriver driver, String label) {
         super(driver, label);

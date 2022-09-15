@@ -16,8 +16,7 @@ public class TestCaseDetailsPage extends HomePage {
 
     private final static By TITLE_NAME = By.xpath("//div[contains(@class,'content-header-title')]");
     private final static By SECTION_NAME = By.cssSelector(".content-breadcrumb a");
-    private final static By ACCESS_MESSAGE = By.cssSelector(".message.message-success");
-    private final static By EDIT_BUTTON_LOCATOR = By.xpath("//a[contains(@class,'toolbar-button')]");
+
 
     public TestCaseDetailsPage(WebDriver driver) {
         super(driver);
@@ -67,19 +66,6 @@ public class TestCaseDetailsPage extends HomePage {
         }
 
         return testCaseBuilder.build();
-    }
-
-    public boolean isAccessMessageDisplayed() {
-        return driver.findElement(ACCESS_MESSAGE).isDisplayed();
-    }
-
-    public String getAccessMessageText() {
-        return driver.findElement(ACCESS_MESSAGE).getText();
-    }
-
-    public void clickEditButton() {
-        waitForElementClickable(EDIT_BUTTON_LOCATOR);
-        driver.findElement(EDIT_BUTTON_LOCATOR).click();
     }
 
 

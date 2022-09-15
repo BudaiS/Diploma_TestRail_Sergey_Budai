@@ -14,7 +14,6 @@ public class TestCasesPage extends HomePage {
     private final static By GROUPS_SECTION_LOCATOR = By.cssSelector("div#groups");
     private final static By DISPLAY_DELETED_TEST_CASES = By.xpath("//span[text()='Display Deleted Test Cases']");
     private final static String EDIT_SECTION_BUTTON = "//span[text()='%s']//following-sibling::a//div[contains(@class,'icon-small-edit')]";
-    private final static By ADD_TEST_CASES_BUTTON = By.id("sidebar-cases-add");
     private final static By CONFIRMATION_MESSAGES = By.xpath("//div[@class='dialog-body']//following-sibling::p[contains(@class,'text-delete')][contains(text(),'You will irrevocably delete at least ')]");
 
     public TestCasesPage(WebDriver driver) {
@@ -63,9 +62,6 @@ public class TestCasesPage extends HomePage {
                 .click().build().perform();
     }
 
-    public void clickAddTestCasesButton() {
-        driver.findElement(ADD_TEST_CASES_BUTTON).click();
-    }
 
     public void isWaitConfirmationMessagesDisplayed() {
         waitForElementDisplayed(CONFIRMATION_MESSAGES);

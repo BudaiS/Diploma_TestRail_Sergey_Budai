@@ -31,7 +31,7 @@ public class ProjectTests extends BaseTests {
         dashboardPage.clickAddProjectButton();
         addNewProjectPage.waitForPageLoaded();
         addNewProjectPage.setProjectName(NEW_PROJECT);
-        addNewProjectPage.clickAddProjectButton();
+        addNewProjectPage.clickOverallAddInAddPageButton();
         completeProjectPage.waitForPageLoaded();
         Assert.assertTrue(completeProjectPage.isAccessMessageDisplayed(),
                 "Checking for a Success Message");

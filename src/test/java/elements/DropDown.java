@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import java.util.Objects;
 
 public class DropDown extends BaseElements {
-    private final static String BUTTON_LOCATOR = "//label[starts-with(text(),'%s')]//following-sibling::div";
+    private final static String BUTTON_LOCATOR = "//label[starts-with(text(),'%s')]//following-sibling::div[1]";
     private final static String OPTION_LOCATOR = "//li[contains(text(),'%s')]";
 
     public DropDown(WebDriver driver, String label) {

@@ -21,6 +21,7 @@ public class Constant {
     }
 
     public static class TestCaseTestsConstants {
+        public final static String TEST_CASE_BUTTON_NAME = "Add Test Case";
         public final static String TEST_CASES_HEADER = "Test Cases";
         public final static String EXPECTED_SECTION_COUNT = "2";
         public final static String CONFIRMATION_TEST_CASE_TEXT = "Yes, delete this section (cannot be undone)";
@@ -28,5 +29,22 @@ public class Constant {
         public final static String ACCESS_DELETE_TEST_CASE_MESSAGE_TEXT = "Successfully deleted the test case.";
 
     }
+
+    public static class MilestonesTestsConstants {
+        public final static String MILESTONES_HEADER = "Milestones";
+        public final static String MILESTONE_BUTTON_NAME = "Add Milestone";
+        public final static String EXPECTED_ACCESS_MESSAGE_TEXT = "Successfully added the new milestone.";
+        public final static String EXPECTED_DELETE_MESSAGE_TEXT = "Successfully deleted the milestone.";
+    }
+
+    public static class TestRunsResultsTestsConstants {
+        public final static String TEST_RUNS_RESULTS_HEADER = "Test Runs & Results";
+        public final static String EXPECTED_ACCESS_TEST_RUN_MESSAGE_TEXT = "Successfully added the new test run.";
+        public final static String CONFIRM_DELETE_TEST_RUN_TEXT = "Yes, delete this test run (cannot be undone)";
+        public final static String EXPECTED_DELETE_TEST_RUN_MESSAGE_TEXT = "Successfully deleted the test run.";
+        public final static String TEST_RUN_BUTTON_NAME = "Add Test Run";
+        public final static String TEST_PLAN_BUTTON_NAME = "Add Test Plan";
+    }
+
 
 }

@@ -12,22 +12,14 @@ import pages.HomePage;
 
 public class AddTestCasePage extends HomePage {
     private final static By DELETED_PERMANENTLY_BUTTON = By.xpath("//input[@id='deletionCaseID']//following-sibling::a[contains(text(),'Delete Permanently')]");
-    private final static By ADD_TEST_CASE_BUTTON = By.xpath("//button[@id='accept']");
-    private final static By DELETE_TEST_CASE_BUTTON = By.xpath("//span[contains(@class,'button-delete')]");
+
+
     private final static By CONFIRM_DELETE_PERMANENTLY_BUTTON = By.xpath("//input[@id='isCasesBulkDeletion']//following-sibling::a[contains(text(),'Delete Permanently')]");
 
     public AddTestCasePage(WebDriver driver) {
         super(driver);
     }
 
-    @Override
-    public void waitForPageLoaded() {
-        waitForElementClickable(IMAGE);
-    }
-
-    public void clickAddTestCaseButton() {
-        driver.findElement(ADD_TEST_CASE_BUTTON).click();
-    }
 
     public void fillForm(TestCase inputTestCase) {
         new Input(driver, "Title").setValue(inputTestCase.getTitle());
@@ -43,10 +35,6 @@ public class AddTestCasePage extends HomePage {
 
     }
 
-    public void clickDeleteTestCaseButton() {
-        waitForElementClickable(DELETE_TEST_CASE_BUTTON);
-        driver.findElement(DELETE_TEST_CASE_BUTTON).click();
-    }
 
     public void clickDeletedPermanentlyButton() {
         waitForElementClickable(DELETED_PERMANENTLY_BUTTON);
