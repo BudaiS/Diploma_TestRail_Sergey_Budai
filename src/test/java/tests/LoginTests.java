@@ -1,14 +1,17 @@
 package tests;
 
+import lombok.extern.log4j.Log4j2;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import static constans.Constant.LoginTestsConstants.*;
 
+@Log4j2
+
 public class LoginTests extends BaseTests {
 
-    @Test
+    @Test(groups = {"Smoke"})
     public void loginTests() {
         loginPage.waitForLoginPageLoaded();
         loginPage.login(EMAIL, PASSWORD);
@@ -17,7 +20,7 @@ public class LoginTests extends BaseTests {
 
     }
 
-    @Test(dataProvider = "negativeLoginTests")
+    @Test(groups = {"Negative"}, dataProvider = "negativeLoginTests")
     public void negativeLoginTests(String email, String password, String errorMessage) {
         loginPage.waitForLoginPageLoaded();
         loginPage.setEmail(email);

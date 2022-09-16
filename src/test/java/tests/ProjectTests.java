@@ -1,6 +1,7 @@
 package tests;
 
 
+import lombok.extern.log4j.Log4j2;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -9,7 +10,7 @@ import pages.project.CompleteProjectPage;
 
 import static constans.Constant.ProjectTestsConstants.*;
 
-
+@Log4j2
 public class ProjectTests extends BaseTests {
 
 
@@ -23,7 +24,7 @@ public class ProjectTests extends BaseTests {
         completeProjectPage = new CompleteProjectPage(driver);
     }
 
-    @Test
+    @Test(groups = {"Smoke"})
     public void createAndDeleteNewProjectTests() {
         loginPage.waitForLoginPageLoaded();
         loginPage.login(EMAIL, PASSWORD);

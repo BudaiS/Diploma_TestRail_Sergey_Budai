@@ -3,12 +3,8 @@ package pages.testRunsResult;
 import org.openqa.selenium.WebDriver;
 import pages.HomePage;
 
-public class TestRunsResultsPage extends HomePage {
-
-
-    public TestRunsResultsPage(WebDriver driver) {
+public class TestPlanDetailsPage extends HomePage {
+    public TestPlanDetailsPage(WebDriver driver) {
         super(driver);
     }
-
-
 }

@@ -1,5 +1,7 @@
 package pages;
 
+import io.qameta.allure.Step;
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -11,6 +13,7 @@ import java.util.concurrent.TimeUnit;
 
 import static constans.Constant.TimeoutVariable.*;
 
+@Log4j2
 public abstract class BasePage {
     protected final static By IMAGE = By.xpath("//img[contains(@id,'pendo-image-badge')]");
     protected WebDriver driver;
@@ -22,7 +25,9 @@ public abstract class BasePage {
         this.wait = new WebDriverWait(driver, EXPLICIT_WAIT);
     }
 
+    @Step("wait for page loaded")
     public void waitForPageLoaded() {
+        log.info("wait for page loaded");
         waitForElementClickable(IMAGE);
     }
 
@@ -41,6 +46,7 @@ public abstract class BasePage {
     public void waitForElementDisplayed(By locator) {
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
+
 
     public void waitForElementClickable(By locator) {
         wait.until(ExpectedConditions.elementToBeClickable(locator));

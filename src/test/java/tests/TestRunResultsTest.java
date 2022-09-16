@@ -1,21 +1,19 @@
 package tests;
 
+import lombok.extern.log4j.Log4j2;
 import models.TestPlan;
 import models.TestRun;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pages.OverviewPage;
-import pages.testRunsResult.AddTestPlanPage;
-import pages.testRunsResult.AddTestRunPage;
-import pages.testRunsResult.TestRunDetailsPage;
-import pages.testRunsResult.TestRunsResultsPage;
+import pages.testRunsResult.*;
 import utils.TestPlanFactory;
 import utils.TestRunFactory;
 
 import static constans.Constant.TestRunsResultsTestsConstants.*;
 
-
+@Log4j2
 public class TestRunResultsTest extends BaseTests {
 
     OverviewPage overviewPage;
@@ -23,6 +21,7 @@ public class TestRunResultsTest extends BaseTests {
     AddTestRunPage addTestRunPage;
     TestRunDetailsPage testRunDetailsPage;
     AddTestPlanPage addTestPlanPage;
+    TestPlanDetailsPage testPlanDetailsPage;
 
     @BeforeClass
     public void initialise() {
@@ -31,9 +30,10 @@ public class TestRunResultsTest extends BaseTests {
         addTestRunPage = new AddTestRunPage(driver);
         testRunDetailsPage = new TestRunDetailsPage(driver);
         addTestPlanPage = new AddTestPlanPage(driver);
+        testPlanDetailsPage = new TestPlanDetailsPage(driver);
     }
 
-    @Test
+    @Test(groups = {"Smoke"})
     public void createAndDeleteTestRunTests() {
         loginPage.waitForLoginPageLoaded();
         loginPage.login(EMAIL, PASSWORD);
@@ -66,7 +66,7 @@ public class TestRunResultsTest extends BaseTests {
 
     }
 
-    @Test
+    @Test(groups = {"Smoke"})
     public void createAndDeleteTestPlanTests() {
         loginPage.waitForLoginPageLoaded();
         loginPage.login(EMAIL, PASSWORD);
@@ -79,6 +79,22 @@ public class TestRunResultsTest extends BaseTests {
         TestPlan testTestPlan = TestPlanFactory.getFullInfoTestPlan();
         addTestPlanPage.fillForm(testTestPlan);
         addTestPlanPage.clickOverallAddInAddPageButton();
+        testPlanDetailsPage.waitForPageLoaded();
+        Assert.assertTrue(testPlanDetailsPage.isAccessMessageDisplayed(),
+                "Checking for a message about the successful creation of a test plan");
+        Assert.assertEquals(testPlanDetailsPage.getAccessMessageText(), EXPECTED_ACCESS_TEST_PLAN_MESSAGE_TEXT,
+                "Message text check");
+        testPlanDetailsPage.clickEditButton();
+        addTestPlanPage.waitForPageLoaded();
+        addTestPlanPage.clickOverallDeleteButton();
+        addTestPlanPage.clickConfirmDeleteInput(CONFIRM_DELETE_TEST_PLAN_TEXT);
+        addTestPlanPage.clickConfirmDeleteOkButton();
+        testRunsResultsPage.waitForPageLoaded();
+        testRunsResultsPage.waitForTextToBe(EXPECTED_DELETE_TEST_PLAN_MESSAGE_TEXT);
+        Assert.assertTrue(testRunsResultsPage.isAccessMessageDisplayed(),
+                "Checking for a message about the successful delete of a test plan");
+        Assert.assertEquals(testRunsResultsPage.getAccessMessageText(), EXPECTED_DELETE_TEST_PLAN_MESSAGE_TEXT,
+                "Message text check");
 
 
     }

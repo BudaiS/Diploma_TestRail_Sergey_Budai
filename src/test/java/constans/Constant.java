@@ -44,6 +44,9 @@ public class Constant {
         public final static String EXPECTED_DELETE_TEST_RUN_MESSAGE_TEXT = "Successfully deleted the test run.";
         public final static String TEST_RUN_BUTTON_NAME = "Add Test Run";
         public final static String TEST_PLAN_BUTTON_NAME = "Add Test Plan";
+        public final static String EXPECTED_ACCESS_TEST_PLAN_MESSAGE_TEXT = "Successfully added the new test plan.";
+        public final static String CONFIRM_DELETE_TEST_PLAN_TEXT = "Yes, delete this test plan (cannot be undone)";
+        public final static String EXPECTED_DELETE_TEST_PLAN_MESSAGE_TEXT = "Successfully deleted the test plan and the related test runs.";
     }
 
 

@@ -2,6 +2,7 @@ package tests;
 
 
 import com.github.javafaker.Faker;
+import lombok.extern.log4j.Log4j2;
 import models.TestCase;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
@@ -14,6 +15,7 @@ import utils.TestCaseFactory;
 
 import static constans.Constant.TestCaseTestsConstants.*;
 
+@Log4j2
 public class TestCaseTests extends BaseTests {
 
 
@@ -33,7 +35,7 @@ public class TestCaseTests extends BaseTests {
     }
 
 
-    @Test
+    @Test(groups = {"Smoke"})
     public void createAndDeleteSectionTests() {
         loginPage.waitForLoginPageLoaded();
         loginPage.login(EMAIL, PASSWORD);
@@ -63,7 +65,7 @@ public class TestCaseTests extends BaseTests {
 
     }
 
-    @Test
+    @Test(groups = {"Smoke"})
     public void createAndDeleteTestCasesTests() {
         loginPage.waitForLoginPageLoaded();
         loginPage.login(EMAIL, PASSWORD);

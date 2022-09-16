@@ -1,5 +1,6 @@
 package tests;
 
+import lombok.extern.log4j.Log4j2;
 import models.Milestones;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
@@ -11,7 +12,7 @@ import utils.MilestonesFactory;
 
 import static constans.Constant.MilestonesTestsConstants.*;
 
-
+@Log4j2
 public class MilestonesTests extends BaseTests {
 
     OverviewPage overviewPage;
@@ -26,7 +27,7 @@ public class MilestonesTests extends BaseTests {
 
     }
 
-    @Test
+    @Test(groups = {"Smoke"})
     public void createAndeDeleteMilestones() {
         loginPage.waitForLoginPageLoaded();
         loginPage.login(EMAIL, PASSWORD);
@@ -46,9 +47,9 @@ public class MilestonesTests extends BaseTests {
         Assert.assertEquals(milestonesPage.getAccessMessageText(), EXPECTED_ACCESS_MESSAGE_TEXT,
                 "Message text check");
         milestonesPage.clickExpandButton();
-        milestonesPage.clickEntityMilestonesInput();
+        milestonesPage.clickEntityMilestonesCheckbox();
         milestonesPage.clickDeleteSelectedButton();
-        milestonesPage.clickConfirmDeleteInput();
+        milestonesPage.clickConfirmDeleteCheckbox();
         milestonesPage.clickConfirmDeleteButton();
         milestonesPage.waitForPageLoaded();
         Assert.assertTrue(milestonesPage.isAccessMessageDisplayed(),

@@ -4,19 +4,18 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestContext;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.*;
 import pages.DashboardPage;
 import pages.LoginPage;
 import utils.DriverFactory;
 import utils.PropertyReader;
+import utils.TestListener;
 
 import java.util.concurrent.TimeUnit;
 
 import static constans.Constant.TimeoutVariable.*;
 
+@Listeners(TestListener.class)
 public class BaseTests {
     protected String EMAIL = PropertyReader.getProperty("test_rail.email");
     protected String PASSWORD = PropertyReader.getProperty("test_rail.password");

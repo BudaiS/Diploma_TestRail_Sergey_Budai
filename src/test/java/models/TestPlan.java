@@ -8,6 +8,6 @@ import lombok.Data;
 
 public class TestPlan {
     private String name;
-    private String milestone;           //elements = DropDown, label = "Milestone"
-    private String description;         //elements = TextArea, label = "description"
+    private String milestone;
+    private String description;
 }
