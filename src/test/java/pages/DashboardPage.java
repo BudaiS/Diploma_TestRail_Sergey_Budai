@@ -15,7 +15,7 @@ public class DashboardPage extends HomePage {
     }
 
 
-    @Step("check is add prolect button displayed")
+    @Step("check is add project button displayed")
     public boolean isAddProjectButtonDisplayed() {
         log.info("return add project button is displayed");
         return driver.findElement(ADD_PROJECT).isDisplayed();
@@ -27,7 +27,7 @@ public class DashboardPage extends HomePage {
         driver.findElement(ADD_PROJECT).click();
     }
 
-    @Step("click 'TestProject'")
+    @Step("click {projectName}")
     public void clickTestProject(String projectName) {
         log.debug(String.format("click %s", projectName));
         driver.findElement(By.xpath(String.format(TEST_PROJECT, projectName))).click();

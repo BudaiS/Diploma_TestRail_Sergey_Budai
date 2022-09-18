@@ -25,9 +25,7 @@ public abstract class BasePage {
         this.wait = new WebDriverWait(driver, EXPLICIT_WAIT);
     }
 
-    @Step("wait for page loaded")
     public void waitForPageLoaded() {
-        log.info("wait for page loaded");
         waitForElementClickable(IMAGE);
     }
 

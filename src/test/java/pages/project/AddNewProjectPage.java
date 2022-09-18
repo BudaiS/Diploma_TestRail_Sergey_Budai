@@ -14,7 +14,7 @@ public class AddNewProjectPage extends HomePage {
         super(driver);
     }
 
-    @Step("setting project name")
+    @Step("setting {name}")
     public void setProjectName(String name) {
         log.info("setting project name");
         driver.findElement(NAME_INPUT).sendKeys(name);

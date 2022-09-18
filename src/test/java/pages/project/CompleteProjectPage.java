@@ -17,7 +17,7 @@ public class CompleteProjectPage extends HomePage {
     }
 
 
-    @Step("click delete project button")
+    @Step("click delete {newProject} button")
     public void clickDeleteProjectButton(String newProject) {
         log.debug(String.format("delete %s ", newProject));
         driver.findElement(By.xpath(String.format(DELETE_PROJECT_BUTTON, newProject))).click();

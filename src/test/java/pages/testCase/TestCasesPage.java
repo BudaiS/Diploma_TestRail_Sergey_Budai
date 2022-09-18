@@ -64,7 +64,7 @@ public class TestCasesPage extends HomePage {
         driver.findElement(DISPLAY_DELETED_TEST_CASES).click();
     }
 
-    @Step("click delete section button")
+    @Step("click delete {sectionName} button")
     public void clickDeleteSectionButton(String sectionName) {
         log.debug(String.format("wait for element %s is displayed"));
         waitForElementDisplayed(By.xpath(String.format(EDIT_SECTION_BUTTON, sectionName)));

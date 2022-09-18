@@ -35,7 +35,7 @@ public abstract class HomePage extends BasePage {
 
     }
 
-    @Step("open header by name")
+    @Step("open {headerName}")
     public void openHeaderByName(String headerName) {
         log.debug(String.format("Click %s header", headerName));
         driver.findElement(By.xpath

@@ -23,10 +23,10 @@ public class TestListener implements ITestListener {
     }
 
     @Override
-    @Attachment
+    @Attachment(value = "screenshot", type = "image/png")
     public void onTestFailure(ITestResult result) {
         ITestListener.super.onTestFailure(result);
-        System.out.println("Test " + result.getName() + " failed");
+        log.debug("Test " + result.getName() + " failed");
         WebDriver driver = (WebDriver) result.getTestContext().getAttribute("driver");
         AllureUtils.attachScreenshot(driver);
     }
