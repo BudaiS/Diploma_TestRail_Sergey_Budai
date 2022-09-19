@@ -1,25 +1,25 @@
-Product description
+# Product description
 
 TestRail is a web-based test case management tool. It is used by testers, developers and team leads to manage, track, and organize software testing efforts.
 
-Checklist
+# Checklist
 
-Login
+### Login
 - check if all fields of the form can be filled;
 - check the ability to log in to the site
 - check if errors occur due to incorrect data entry
 
-Project
+### Project
 - check the possibility of creating a new Project
 - check if the new Project can be deleted
 - check for the presence and consistency of messages about creating and deleting a Project
 
-Milestones
+### Milestones
 - check the possibility of creating a new Milestones
 - check if the new Milestones can be deleted
 - check for the presence and consistency of messages about creating and deleting a Milestones
 
-Test Case
+### Test Case
 - check the possibility of creating a new Test Case
 - check that all fields in the new Test Case are true
 - check if the new Test Case can be deleted
@@ -28,7 +28,7 @@ Test Case
 - check if the new Test Section can be deleted
 - check for the presence and consistency of messages about creating and deleting a Test Section
 
-Test Run
+### Test Run
 - check the possibility of creating a new Test Run
 - check if the new Test Run can be deleted
 - check for the presence and consistency of messages about creating and deleting a Test Run
@@ -36,8 +36,14 @@ Test Run
 - check if the new Test Plan can be deleted
 - check for the presence and consistency of messages about creating and deleting a Test Plan
 
+### Reports
+- check the possibility of creating a new Report
+- check that all fields in the new Report are true
+- check if the new Report can be deleted
 
-Stack
+
+
+# Stack
 - [Java 18.0.1.1]
 - [Selenium 3.141.59]
 - [Maven 4.0.0]
@@ -51,7 +57,7 @@ Stack
 - [Log4j 2.18.0]
 
 
-Patterns Used: 
+# Patterns Used: 
 - Page Object Model
 - Builder 
 - Decorator
@@ -59,7 +65,7 @@ Patterns Used:
 - Value Object
 
 
-Running tests:
+# Running tests:
 
 - TestNG command for run: - mvn clean test
 

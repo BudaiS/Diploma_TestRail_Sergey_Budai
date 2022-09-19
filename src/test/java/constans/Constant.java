@@ -5,7 +5,7 @@ public class Constant {
         public static final int IMPLICIT_WAIT = 5;
         public static final int ZERO_IMPLICIT_WAIT = 0;
         public static final int PAE_LOAD_TIMEOUT = 60;
-        public static final int EXPLICIT_WAIT = 20;
+        public static final int EXPLICIT_WAIT = 30;
     }
 
     public static class LoginTestsConstants {
@@ -34,7 +34,7 @@ public class Constant {
         public final static String MILESTONES_HEADER = "Milestones";
         public final static String MILESTONE_BUTTON_NAME = "Add Milestone";
         public final static String EXPECTED_ACCESS_MESSAGE_TEXT = "Successfully added the new milestone.";
-        public final static String EXPECTED_DELETE_MESSAGE_TEXT = "Successfully deleted the milestone.";
+        public final static String EXPECTED_DELETE_MESSAGE_TEXT = "Successfully deleted the milestone (s).";
     }
 
     public static class TestRunsResultsTestsConstants {
@@ -47,6 +47,11 @@ public class Constant {
         public final static String EXPECTED_ACCESS_TEST_PLAN_MESSAGE_TEXT = "Successfully added the new test plan.";
         public final static String CONFIRM_DELETE_TEST_PLAN_TEXT = "Yes, delete this test plan (cannot be undone)";
         public final static String EXPECTED_DELETE_TEST_PLAN_MESSAGE_TEXT = "Successfully deleted the test plan and the related test runs.";
+    }
+    public static class ReportsTestsConstants  {
+        public final static String REPORTS_HEADER = "Reports";
+        public final static String EXPECTED_ACCESS_REPORT_MESSAGE_TEXT = "Successfully added the new report/scheduled report.";
+        public final static String EXPECTED_DELETE_REPORT_MESSAGE_TEXT = "Report deleted";
     }
 
 

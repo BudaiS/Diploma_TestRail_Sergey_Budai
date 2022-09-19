@@ -23,6 +23,7 @@ public class BaseTests {
     protected String DELETE_SECTION_NAME = PropertyReader.getProperty("test_rail.delete_section_name");
     protected String TEST_PROJECT_NAME = PropertyReader.getProperty("test_rail.test_project_name");
     protected String TEST_MILESTONES_NAME = PropertyReader.getProperty("test_rail.test_milestones_name");
+    protected String TEST_REPORT_NAME = PropertyReader.getProperty("test_rail.test_report_name");
     protected WebDriver driver;
     protected WebDriverWait wait;
     LoginPage loginPage;

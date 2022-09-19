@@ -52,10 +52,11 @@ public class MilestonesTests extends BaseTests {
         milestonesPage.clickConfirmDeleteCheckbox();
         milestonesPage.clickConfirmDeleteButton();
         milestonesPage.waitForPageLoaded();
+        milestonesPage.waitForTextToBe(EXPECTED_DELETE_MESSAGE_TEXT);
         Assert.assertTrue(milestonesPage.isAccessMessageDisplayed(),
                 "Checking for a message about the successful delete of a milestone");
-        /*Assert.assertEquals(milestonesPage.getAccessMessageText(), EXPECTED_DELETE_MESSAGE_TEXT,
-                "Message text check");*/
+        Assert.assertEquals(milestonesPage.getAccessMessageText(), EXPECTED_DELETE_MESSAGE_TEXT,
+                "Message text check");
 
 
     }

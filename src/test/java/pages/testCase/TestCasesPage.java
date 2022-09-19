@@ -66,7 +66,7 @@ public class TestCasesPage extends HomePage {
 
     @Step("click delete {sectionName} button")
     public void clickDeleteSectionButton(String sectionName) {
-        log.debug(String.format("wait for element %s is displayed"));
+        log.info("wait for element %s is displayed");
         waitForElementDisplayed(By.xpath(String.format(EDIT_SECTION_BUTTON, sectionName)));
         log.debug(String.format("move to element %s", sectionName));
         actions.moveToElement(driver.findElement(By.xpath(String.format(EDIT_SECTION_BUTTON, sectionName))))
