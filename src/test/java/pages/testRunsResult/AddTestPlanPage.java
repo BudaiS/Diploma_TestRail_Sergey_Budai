@@ -23,7 +23,6 @@ public class AddTestPlanPage extends HomePage {
     }
 
     @Step("fill TestPlan form")
-    @Attachment(value = "screenshot", type = "image/png")
     public void fillForm(TestPlan inputTestPlan) {
         log.info("fill TestPlan form");
         this.nameSetValue(inputTestPlan.getName());

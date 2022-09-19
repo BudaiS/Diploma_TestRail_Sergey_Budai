@@ -24,7 +24,6 @@ public class AddReportPage extends HomePage {
     }
 
     @Step("fill Reports form")
-    @Attachment(value = "screenshot", type = "image/png")
     public void fillForm(Reports inputReports) {
         log.info("fill Reports form");
         this.nameSetValue(inputReports.getName());

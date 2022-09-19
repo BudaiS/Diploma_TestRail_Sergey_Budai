@@ -25,7 +25,6 @@ public class AddTestCasePage extends HomePage {
     }
 
     @Step("fill TestCase form")
-    @Attachment(value = "screenshot", type = "image/png")
     public void fillForm(TestCase inputTestCase) {
         log.info("fill TestCase form");
         new Input(driver, "Title").setValue(inputTestCase.getTitle());

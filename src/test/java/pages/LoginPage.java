@@ -62,7 +62,6 @@ public class LoginPage extends BasePage {
         return driver.findElement(ERROR_MESSAGE).getText();
     }
 
-    @Attachment(value = "screenshot", type = "image/png")
     @Step("setting email, password and clicking login button")
     public void login(String email, String password) {
         setEmail(email);

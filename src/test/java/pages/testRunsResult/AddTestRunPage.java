@@ -20,7 +20,6 @@ public class AddTestRunPage extends HomePage {
     }
 
     @Step("fill TestRun form")
-    @Attachment(value = "screenshot", type = "image/png")
     public void fillForm(TestRun inputTestRun) {
         log.info("fill TestRun form");
         new Input(driver, "Name").setValue(inputTestRun.getName());

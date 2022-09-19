@@ -19,7 +19,6 @@ public class AddMilestonesPage extends HomePage {
     }
 
     @Step("fill Milestones form")
-    @Attachment(value = "screenshot", type = "image/png")
     public void fillForm(Milestones inputMilestones) {
         log.info("fill Milestones form");
         new Input(driver, "Name").setValue(inputMilestones.getName());
