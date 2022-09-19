@@ -20,13 +20,11 @@ public class DropDown extends BaseElements {
     public void selectByVisibleText(String visibleText) {
         if (Objects.nonNull(visibleText)) {
             WebElement button = driver.findElement(By.xpath(String.format(BUTTON_LOCATOR, label)));
-            log.debug(String.format("Scroll to dropdown %s", label));
             scrollIntoView(button);
             log.debug(String.format(
                     "Click %s dropdown to expand the list of options", label));
             button.click();
             WebElement option = driver.findElement(By.xpath(String.format(OPTION_LOCATOR, visibleText)));
-            log.debug(String.format("Scroll to dropdown %s", visibleText));
             scrollIntoView(option);
             log.debug(String.format(
                     "Click %s option", option));

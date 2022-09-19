@@ -21,7 +21,6 @@ public class FieldElements extends BaseElements {
             return null;
         }
         WebElement textElement = driver.findElement(textElementLocator);
-        log.debug(String.format("Scroll to fieldElements %s", textElement));
         scrollIntoView(textElement);
         return textElement.getText();
     }

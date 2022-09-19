@@ -18,7 +18,6 @@ public class QuestionInput extends BaseElements {
     public void setValue(String value) {
         WebElement inputElement = driver.findElement(By.xpath(String.format(INPUT_LOCATOR, label)));
         if (Objects.nonNull(value)) {
-            log.debug(String.format("Scroll to %s input", label));
             scrollIntoView(inputElement);
             log.debug(String.format("Enter %s to %s input", value, label));
             inputElement.sendKeys(value);
