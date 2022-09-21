@@ -23,7 +23,7 @@ public class TestRunResultsTest extends BaseTests {
     AddTestPlanPage addTestPlanPage;
     TestPlanDetailsPage testPlanDetailsPage;
 
-    @BeforeClass
+    @BeforeClass(alwaysRun = true)
     public void initialise() {
         overviewPage = new OverviewPage(driver);
         testRunsResultsPage = new TestRunsResultsPage(driver);
@@ -33,7 +33,7 @@ public class TestRunResultsTest extends BaseTests {
         testPlanDetailsPage = new TestPlanDetailsPage(driver);
     }
 
-    @Test(groups = {"Smoke"})
+    @Test(groups = {"allTest", "smoke"})
     public void createAndDeleteTestRunTests() {
         loginPage.waitForLoginPageLoaded();
         loginPage.login(EMAIL, PASSWORD);
@@ -66,7 +66,7 @@ public class TestRunResultsTest extends BaseTests {
 
     }
 
-    @Test(groups = {"Smoke"})
+    @Test(groups = {"smoke", "allTest"})
     public void createAndDeleteTestPlanTests() {
         loginPage.waitForLoginPageLoaded();
         loginPage.login(EMAIL, PASSWORD);

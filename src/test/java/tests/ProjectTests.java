@@ -18,19 +18,19 @@ public class ProjectTests extends BaseTests {
     CompleteProjectPage completeProjectPage;
 
 
-    @BeforeClass
+    @BeforeClass(alwaysRun = true)
     public void initialise() {
         addNewProjectPage = new AddNewProjectPage(driver);
         completeProjectPage = new CompleteProjectPage(driver);
     }
 
-    @Test(groups = {"Smoke"})
+    @Test(groups = {"allTest", "smoke"})
     public void createAndDeleteNewProjectTests() {
         loginPage.waitForLoginPageLoaded();
         loginPage.login(EMAIL, PASSWORD);
         dashboardPage.waitForPageLoaded();
         dashboardPage.clickAddProjectButton();
-        addNewProjectPage.waitForPageLoaded();
+        addNewProjectPage.waitF();
         addNewProjectPage.setProjectName(NEW_PROJECT);
         addNewProjectPage.clickOverallAddInAddPageButton();
         completeProjectPage.waitForPageLoaded();

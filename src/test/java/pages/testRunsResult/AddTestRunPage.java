@@ -4,7 +4,6 @@ import elements.DropDown;
 import elements.Input;
 import elements.QuestionInput;
 import elements.TextArea;
-import io.qameta.allure.Attachment;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import models.TestRun;

@@ -10,6 +10,7 @@ import pages.HomePage;
 public class AddNewProjectPage extends HomePage {
     private final static By NAME_INPUT = By.cssSelector("input#name");
 
+
     public AddNewProjectPage(WebDriver driver) {
         super(driver);
     }
@@ -18,6 +19,10 @@ public class AddNewProjectPage extends HomePage {
     public void setProjectName(String name) {
         log.info("setting project name");
         driver.findElement(NAME_INPUT).sendKeys(name);
+    }
+
+    public void waitF() {
+        waitForElementClickable(NAME_INPUT);
     }
 
 

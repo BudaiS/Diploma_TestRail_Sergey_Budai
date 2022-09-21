@@ -11,14 +11,14 @@
     <properties>
         <seleniumVersion>3.141.59</seleniumVersion>
         <testNgVersion>7.6.0</testNgVersion>
-        <webdrivermanagerVersion>5.2.0</webdrivermanagerVersion>
+        <webdrivermanagerVersion>5.3.0</webdrivermanagerVersion>
         <javaFakerVersion>1.0.2</javaFakerVersion>
-        <lombokVersion>1.18.8</lombokVersion>
+        <lombokVersion>1.18.24</lombokVersion>
         <log4j-coreVersion>2.18.0</log4j-coreVersion>
         <jackson-dataformat-yamlVersion>2.13.3</jackson-dataformat-yamlVersion>
         <allure-testngVersion>2.18.1</allure-testngVersion>
         <aspectj.version>1.9.8</aspectj.version>
-        <suiteXmlFile>smokeTests.xml</suiteXmlFile>
+        <suiteXmlFile>allTest.xml</suiteXmlFile>
         <maven.compiler.source>18</maven.compiler.source>
         <maven.compiler.target>18</maven.compiler.target>
     </properties>
@@ -81,8 +81,6 @@
                     </systemProperties>
                     <suiteXmlFiles>
                         <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
-                        <suiteXmlFile>negativeTest.xml</suiteXmlFile>
-                        <suiteXmlFile>regressionTest.xml</suiteXmlFile>
                     </suiteXmlFiles>
                     <argLine>
                         -javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar -Xmx256m

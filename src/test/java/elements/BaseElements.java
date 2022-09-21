@@ -10,6 +10,7 @@ import java.util.concurrent.TimeUnit;
 
 import static constans.Constant.TimeoutVariable.IMPLICIT_WAIT;
 import static constans.Constant.TimeoutVariable.ZERO_IMPLICIT_WAIT;
+
 @Log4j2
 public class BaseElements {
     protected WebDriver driver;

@@ -21,7 +21,7 @@ public class ReportsTests extends BaseTests {
     ReportDetailsPage reportDetailsPage;
 
 
-    @BeforeClass
+    @BeforeClass(alwaysRun = true)
     public void initialise() {
         overviewPage = new OverviewPage(driver);
         reportsPage = new ReportsPage(driver);
@@ -29,7 +29,7 @@ public class ReportsTests extends BaseTests {
         reportDetailsPage = new ReportDetailsPage(driver);
     }
 
-    @Test(groups = {"Smoke"})
+    @Test(groups = {"allTest", "smoke"})
     public void createAndDeleteReportsTests() {
         loginPage.waitForLoginPageLoaded();
         loginPage.login(EMAIL, PASSWORD);

@@ -19,7 +19,7 @@ public class MilestonesTests extends BaseTests {
     MilestonesPage milestonesPage;
     AddMilestonesPage addMilestonesPage;
 
-    @BeforeClass
+    @BeforeClass(alwaysRun = true)
     public void initialise() {
         overviewPage = new OverviewPage(driver);
         milestonesPage = new MilestonesPage(driver);
@@ -27,7 +27,7 @@ public class MilestonesTests extends BaseTests {
 
     }
 
-    @Test(groups = {"Smoke"})
+    @Test(groups = {"allTest", "smoke"})
     public void createAndeDeleteMilestones() {
         loginPage.waitForLoginPageLoaded();
         loginPage.login(EMAIL, PASSWORD);
