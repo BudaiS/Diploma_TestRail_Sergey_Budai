@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Regression Tests" parallel="classes" >
-    <test name="name">
+<suite name="All tests" parallel="classes" thread-count="2">
+    <test name="All tests">
         <groups>
             <run>
-                <include name="Regression"/>
+                <include name="allTest"/>
             </run>
         </groups>
         <packages>
-            <package name="tests"/>
+            <package name="tests"></package>
         </packages>
     </test>
 </suite>

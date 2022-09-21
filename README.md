@@ -67,11 +67,8 @@ TestRail is a web-based test case management tool. It is used by testers, develo
 
 # Running tests:
 
-- TestNG command for run: - mvn clean test
-
-
+- TestNG command for run all test: - mvn clean test
 - mvn clean test -DsuiteXmlFile=’smokeTest.xml’
-- mvn clean test -DsuiteXmlFile=’regressionTest.xml’
 - mvn clean test -DsuiteXmlFile=’negativeTest.xml’
 
 

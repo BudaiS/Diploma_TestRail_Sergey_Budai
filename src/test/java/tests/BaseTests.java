@@ -44,6 +44,7 @@ public class BaseTests {
 
     }
 
+
     @BeforeMethod(alwaysRun = true)
     public void navigate() {
 

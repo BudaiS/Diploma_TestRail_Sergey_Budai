@@ -11,7 +11,7 @@ import static constans.Constant.LoginTestsConstants.*;
 
 public class LoginTests extends BaseTests {
 
-    @Test(groups = {"Smoke"})
+    @Test(groups = {"allTest", "smoke"})
     public void loginTests() {
         loginPage.waitForLoginPageLoaded();
         loginPage.login(EMAIL, PASSWORD);
@@ -20,7 +20,7 @@ public class LoginTests extends BaseTests {
 
     }
 
-    @Test(groups = {"Negative"}, dataProvider = "negativeLoginTests")
+    @Test(groups = {"allTest", "negative"}, dataProvider = "negativeLoginTests")
     public void negativeLoginTests(String email, String password, String errorMessage) {
         loginPage.waitForLoginPageLoaded();
         loginPage.setEmail(email);

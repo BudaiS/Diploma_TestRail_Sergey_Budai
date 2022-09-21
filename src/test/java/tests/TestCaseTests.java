@@ -25,7 +25,7 @@ public class TestCaseTests extends BaseTests {
     AddTestCasePage addTestCasePage;
     TestCaseDetailsPage testCaseDetailsPage;
 
-    @BeforeClass
+    @BeforeClass(alwaysRun = true)
     public void initialise() {
         overviewPage = new OverviewPage(driver);
         testCasesPage = new TestCasesPage(driver);
@@ -35,7 +35,7 @@ public class TestCaseTests extends BaseTests {
     }
 
 
-    @Test(groups = {"Smoke"})
+    @Test(groups = {"allTest", "smoke"})
     public void createAndDeleteSectionTests() {
         loginPage.waitForLoginPageLoaded();
         loginPage.login(EMAIL, PASSWORD);
@@ -65,7 +65,7 @@ public class TestCaseTests extends BaseTests {
 
     }
 
-    @Test(groups = {"Smoke"})
+    @Test(groups = {"allTest", "smoke"})
     public void createAndDeleteTestCasesTests() {
         loginPage.waitForLoginPageLoaded();
         loginPage.login(EMAIL, PASSWORD);

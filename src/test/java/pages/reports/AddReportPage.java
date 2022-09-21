@@ -1,12 +1,9 @@
 package pages.reports;
 
-import elements.Input;
-import io.qameta.allure.Attachment;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import models.Reports;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pages.HomePage;
@@ -19,6 +16,7 @@ public class AddReportPage extends HomePage {
     private final static By ADD_REPORT_BUTTON_LOCATOR = By.cssSelector("button#submit");
     private final static By DESCRIPTION_AREA_LOCATOR = By.xpath("//label[@for='description']/following-sibling::div[contains(@class,'textarea-resizable')]//textarea");
     private final static By NAME_INPUT_LOCATOR = By.cssSelector("input#name");
+
     public AddReportPage(WebDriver driver) {
         super(driver);
     }
@@ -40,6 +38,7 @@ public class AddReportPage extends HomePage {
             inputElement.sendKeys(value);
         }
     }
+
     @Step("click add report button")
     public void clickAddReportButton() {
         WebElement button = driver.findElement(ADD_REPORT_BUTTON_LOCATOR);

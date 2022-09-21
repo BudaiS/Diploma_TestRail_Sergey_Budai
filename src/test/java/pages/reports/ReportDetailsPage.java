@@ -1,7 +1,6 @@
 package pages.reports;
 
 import models.Reports;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import pages.HomePage;
@@ -29,7 +28,6 @@ public class ReportDetailsPage extends HomePage {
         driver.switchTo().defaultContent();
 
         return reportsBuilder.build();
-
 
 
     }

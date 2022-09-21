@@ -48,7 +48,8 @@ public class Constant {
         public final static String CONFIRM_DELETE_TEST_PLAN_TEXT = "Yes, delete this test plan (cannot be undone)";
         public final static String EXPECTED_DELETE_TEST_PLAN_MESSAGE_TEXT = "Successfully deleted the test plan and the related test runs.";
     }
-    public static class ReportsTestsConstants  {
+
+    public static class ReportsTestsConstants {
         public final static String REPORTS_HEADER = "Reports";
         public final static String EXPECTED_ACCESS_REPORT_MESSAGE_TEXT = "Successfully added the new report/scheduled report.";
         public final static String EXPECTED_DELETE_REPORT_MESSAGE_TEXT = "Report deleted";

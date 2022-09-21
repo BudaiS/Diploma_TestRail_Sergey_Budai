@@ -8,9 +8,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import static constans.Constant.TimeoutVariable.EXPLICIT_WAIT;
 
 @Log4j2
 
@@ -25,13 +22,11 @@ public abstract class HomePage extends BasePage {
     private final static By ADD_OVERALL_IN_ADD_PAGE_BUTTON = By.id("accept");
     private final static String ADD_OVERALL_IN_ENTITY_PAGE_BUTTON_LOCATOR = "//span[text()='%s']";
     protected Actions actions = new Actions(driver);
-    protected WebDriverWait wait;
 
 
     public HomePage(WebDriver driver) {
 
         super(driver);
-        this.wait = new WebDriverWait(driver, EXPLICIT_WAIT);
 
     }
 
