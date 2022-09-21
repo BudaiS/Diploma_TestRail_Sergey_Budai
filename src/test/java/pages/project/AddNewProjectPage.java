@@ -21,9 +21,6 @@ public class AddNewProjectPage extends HomePage {
         driver.findElement(NAME_INPUT).sendKeys(name);
     }
 
-    public void waitF() {
-        waitForElementClickable(NAME_INPUT);
-    }
 
 
 }

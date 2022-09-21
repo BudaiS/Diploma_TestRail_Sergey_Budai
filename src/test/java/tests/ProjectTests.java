@@ -30,7 +30,7 @@ public class ProjectTests extends BaseTests {
         loginPage.login(EMAIL, PASSWORD);
         dashboardPage.waitForPageLoaded();
         dashboardPage.clickAddProjectButton();
-        addNewProjectPage.waitF();
+        addNewProjectPage.waitForPageLoaded();
         addNewProjectPage.setProjectName(NEW_PROJECT);
         addNewProjectPage.clickOverallAddInAddPageButton();
         completeProjectPage.waitForPageLoaded();
